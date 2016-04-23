@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>hh.portal.ws</groupId>
+  <artifactId>hh-core-ws</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20160423021158</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>war</extension>
+        <value>0.0.1-SNAPSHOT</value>
+        <updated>20160423021158</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.1-SNAPSHOT</value>
+        <updated>20160423021158</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

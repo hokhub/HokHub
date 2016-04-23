@@ -1,0 +1,13 @@
+hh/portal/model/Employee.class
+hh/portal/service/BaseService.class
+hh/portal/util/RestURIConstants.class
+hh/portal/service/JobService.class
+hh/portal/dao/JobDAO.class
+hh/portal/service/ServiceProvider.class
+hh/portal/model/Job_demo.class
+hh/portal/service/JobServiceImpl.class
+hh/portal/dao/DAOProvider.class
+hh/portal/service/ServiceProviderImpl.class
+hh/portal/dao/DAOProviderImpl.class
+hh/portal/dao/JobDAOHibernate.class
+hh/portal/controller/WSPortalController.class

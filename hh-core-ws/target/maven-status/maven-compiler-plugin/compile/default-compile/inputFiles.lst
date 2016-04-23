@@ -1,0 +1,13 @@
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/model/Employee.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/controller/WSPortalController.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/dao/JobDAOHibernate.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/util/RestURIConstants.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/model/Job_demo.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/dao/DAOProviderImpl.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/service/BaseService.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/service/JobService.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/dao/JobDAO.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/dao/DAOProvider.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/service/ServiceProviderImpl.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/service/JobServiceImpl.java
+/home/xiaopeiyi/workspace/hh-core-ws/src/main/java/hh/portal/service/ServiceProvider.java
