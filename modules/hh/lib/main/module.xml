@@ -1,0 +1,13 @@
+<module xmlns="urn:jboss:module:1.0" name="hh.lib">
+
+   <dependencies>
+      <module name="javax.api"/>
+      <module name="javax.transaction.api"/>
+      <module name="javax.servlet.api" optional="true"/>
+      <module name="org.apache.xerces"/>
+   </dependencies>
+   
+   <resources>
+        <resource-root path="mysql-connector-java-5.1.35-bin.jar"/>	   
+   </resources>
+</module>
