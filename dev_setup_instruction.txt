@@ -1,0 +1,119 @@
+Setup JAVA 8 Open JDK
+http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/#
+
+
+Setup wildfly 9 server for hh project
+1 http://developer-should-know.tumblr.com/post/134394533957/how-to-install-wildfly-on-ubuntu
+after this the wildfly user is "wildfly"
+after this the wildfly service name is "wildfly"
+after this the console log name is "console.log"
+
+Setup maven
+1 http://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/
+2 download setting.xml from github and copy it to maven home conf folder and replace the existing setting.xml folder
+3 your local maven repository will be auto created once you finish above things
+
+Setup mySql
+1 download and install mySql 5.6
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04
+2 set username:root, pwd:root
+3 Create a Schema, called iwt
+
+
+
+Setup hh project
+1 download standalone.xml from github.
+2 replace standalone.xml file with the existing one in wildfly home standalone/configuration/ 
+3 open the new standalone.xml and check the paths. If the paths(deploy folder/log folder/lib folder...) are not existing in your PC, create it.
+4 download modules folder from github.
+5 replace the existing modules folder with the new downloaded modules folder in wildfly home 
+6 download project from github https://github.com/hokhub/HokHub.git
+
+
+Build and deploy hh project
+1 cd to your project folder
+2 cmd: mvn -Pjar clean install
+3 cmd: mvn clean install
+4 copy the war file in project/target folder to wildfly deploy folder(configured in step3)
+5 start mysql server
+6 start wildfly server
+
+
+Setup up another wildfly server for message queue
+1 copy and paste wildfly-9.0.2.Final folder to the same place and rename wildfly-9.0.2.Final
+2 Copy and edit init.d script configuration file:
+sudo cp /opt/wildfly-full/bin/init.d/wildfly.conf /etc/default/wildfly-full
+3 edit variables in /etc/default/wildfly-full
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+
+## Location of WildFly
+JBOSS_HOME="/opt/wildfly-full"
+
+## The username who should own the process.
+JBOSS_USER=wildfly-full
+
+## The mode WildFly should start, standalone or domain
+JBOSS_MODE=standalone
+
+## Configuration for standalone mode
+JBOSS_CONFIG=standalone-full.xml
+
+## Configuration for domain mode
+# JBOSS_DOMAIN_CONFIG=domain.xml
+# JBOSS_HOST_CONFIG=host-master.xml
+
+## The amount of time to wait for startup
+STARTUP_WAIT=60
+
+## The amount of time to wait for shutdown
+SHUTDOWN_WAIT=60
+
+## Location to keep the console log
+JBOSS_CONSOLE_LOG="/var/log/wildfly/console-full.log"
+
+4 edit "/opt/wildfly-full/bin/init.d/wildfly-init-debian.sh". change all wildfly keyword to wildfly-full in the file
+
+5 copy init.d script
+sudo cp /opt/wildfly/bin/init.d/wildfly-init-debian.sh /etc/init.d/wildfly 
+ 
+6 Set proper permissions and ownership of init.d script:
+
+sudo chown root:root /etc/init.d/wildfly-full
+sudo chmod +X /etc/init.d/wildfly-full
+
+7 Add and enable WildFly-full as a service:
+sudo update-rc.d wildfly-full defaults
+sudo update-rc.d wildfly-full enable
+
+8 Add system user to run WildFly-full:
+sudo useradd --system --shell /bin/false wildfly-full
+
+9 Change the owner of WildFly directories:
+sudo chown -R wildfly-full:wildfly-full /opt/wildfly-9.0.2.Final.full/
+sudo chown -R wildfly-full:wildfly-full /opt/wildfly-full
+sudo chown -R wildfly-full:wildfly-full /var/log/wildfly (this no need add wildfly-full)
+
+10 cd and open "/opt/wildfly-full/standalone/configuration/standalone-full.xml"
+change "jboss.socket.binding.port-offset:0" to "jboss.socket.binding.port-offset:1000"
+
+11 Start WildFly for test:
+sudo service wildfly-full start
+check console-full.log see if a clean start
+
+
+
+
+wildfly start/stop
+sudo service wildfly start
+sudo service wildfly stop
+
+wildfly-full start/stop
+sudo service wildfly-full start
+sudo service wildfly-full stop
+
+mysql start/stop
+sudo /etc/init.d/mysql start
+sudo /etc/init.d/mysql stop
+
+
+
