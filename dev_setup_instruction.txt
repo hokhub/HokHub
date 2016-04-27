@@ -18,7 +18,7 @@ Setup mySql
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04
 2 set username:root, pwd:root
 3 Create a Schema, called iwt
-
+4 if you do not want to use cmd line, download mySql client tool e.g. DBeaver/mySql workbench
 
 
 Setup hh project
@@ -28,7 +28,7 @@ Setup hh project
 4 download modules folder from github.
 5 replace the existing modules folder with the new downloaded modules folder in wildfly home 
 6 download project from github https://github.com/hokhub/HokHub.git
-
+7 give write permission to the deployed folder and log folder
 
 Build and deploy hh project
 1 cd to your project folder
