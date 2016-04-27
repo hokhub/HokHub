@@ -1,27 +1,35 @@
 Setup JAVA 8 Open JDK
 http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/#
 
+MacOS: 
+if homebrew installed already:
+   sudo brew up
+else:
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Setup wildfly 9 server for hh project
-1 http://developer-should-know.tumblr.com/post/134394533957/how-to-install-wildfly-on-ubuntu
+I. Setup wildfly 9 server for hh project
+1 Ubuntu: http://developer-should-know.tumblr.com/post/134394533957/how-to-install-wildfly-on-ubuntu
+  MacOS:  sudo brew install wildfly-as
 after this the wildfly user is "wildfly"
 after this the wildfly service name is "wildfly"
 after this the console log name is "console.log"
 
-Setup maven
-1 http://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/
+II. Setup maven
+1  Ubuntu: http://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/
+   MacOS:  sudo brew install maven
+           need set path for envirnoment variable JAVA_HOME, add following to .bash_profile
+           export JAVA_HOME=/Library/Java/JavaVirtualMachines/<replace with jdk file name>/Contents/Home
 2 download setting.xml from github and copy it to maven home conf folder and replace the existing setting.xml folder
 3 your local maven repository will be auto created once you finish above things
 
-Setup mySql
+III. Setup mySql
 1 download and install mySql 5.6
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04
+MacOS: sudo brew install mysql56
 2 set username:root, pwd:root
 3 Create a Schema, called iwt
 
-
-
-Setup hh project
+IV. Setup hh project
 1 download standalone.xml from github.
 2 replace standalone.xml file with the existing one in wildfly home standalone/configuration/ 
 3 open the new standalone.xml and check the paths. If the paths(deploy folder/log folder/lib folder...) are not existing in your PC, create it.
@@ -30,7 +38,7 @@ Setup hh project
 6 download project from github https://github.com/hokhub/HokHub.git
 
 
-Build and deploy hh project
+V. Build and deploy hh project
 1 cd to your project folder
 2 cmd: mvn -Pjar clean install
 3 cmd: mvn clean install
@@ -39,7 +47,7 @@ Build and deploy hh project
 6 start wildfly server
 
 
-Setup up another wildfly server for message queue
+VI. Setup up another wildfly server for message queue
 1 copy and paste wildfly-9.0.2.Final folder to the same place and rename wildfly-9.0.2.Final
 2 Copy and edit init.d script configuration file:
 sudo cp /opt/wildfly-full/bin/init.d/wildfly.conf /etc/default/wildfly-full
