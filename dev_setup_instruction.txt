@@ -20,15 +20,19 @@ II. Setup maven
            need set path for envirnoment variable JAVA_HOME, add following to .bash_profile
            export JAVA_HOME=/Library/Java/JavaVirtualMachines/<replace with jdk file name>/Contents/Home
 2 download setting.xml from github and copy it to maven home conf folder and replace the existing setting.xml folder
-3 your local maven repository will be auto created once you finish above things
+3 open the new setting.xml change the url for you local maven repository.(you can create one, and indicate the url)
+4 if you use eclipse, then eclipse will create the repository for you at "/home/xiaopeiyi/.m2/repository"
 
 III. Setup mySql
-1 download and install mySql 5.6
+/*1 download and install mySql 5.6
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04
 MacOS: sudo brew install mysql56
 2 set username:root, pwd:root
 3 Create a Schema, called iwt
-4 if you do not want to use cmd line, download mySql client tool e.g. DBeaver/mySql workbench
+4 if you do not want to use cmd line, download mySql client tool e.g. DBeaver/mySql workbench*/
+1 As a developer of hokhub, you should contact hokhub admin to add your ip to hokhub DB for accessing DB
+2 Once you add your ip for accessing DB, when you have update to date standalone.xml in the server and update
+to date applicationContext-hibernate.xml in your project, then you do NOT need to do anything else.
 
 
 Setup hh project
