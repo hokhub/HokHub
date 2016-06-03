@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+	<localRepository>home\xiaopeiyi0704\.m2\repository</localRepository>
+
+	<offline>false</offline>
+
+	<pluginGroups>
+	</pluginGroups>
+
+	<proxies>
+	</proxies>
+
+	<servers>
+		<!--<server>
+			<id>csc-snapshot-repo</id>
+			<username>root</username>
+			<password>{FyyiSA8OsbcHtw0HEvC6vlUMjK1UW9uXkvsFJ6lpclo=}</password>
+			<configuration>
+				<timeout>10000</timeout>
+			</configuration>
+		</server> -->
+	</servers>
+
+	<profiles>
+		<profile>
+			<id>hokhub-repository</id>
+			<repositories>
+				<!--<repository>
+					<id>incomm-repo</id>
+					<name>InComm Departmental Repository</name>
+					<url>http://ATLPRDSUB01/maven/repo</url>
+				</repository> -->
+
+				<repository>
+					<id>jahia.org</id>
+					<name>Jahia.org maven repo</name>
+					<url>http://maven.jahia.org/maven2</url>
+				</repository>
+
+				<repository>
+					<id>central</id>
+					<name>Maven Central</name>
+					<url>http://repo1.maven.org/maven2</url>
+				</repository>
+
+				<repository>
+					<id>jboss-public-repository-group</id>
+					<name>JBoss Public Maven Repository Group</name>
+					<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+					<layout>default</layout>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
+		
+		<!--<profile>
+			<id>local-snapshot-profile</id>
+			<repositories>
+				<repository>
+					<id>csc-snapshot-repo</id>
+					<name>Dev Snapshot Repository</name>
+					<url>scp://atldevcsc01itp/opt/maven-repos/snapshots</url>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+					<releases>
+						<enabled>false</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+				</repository>
+			</repositories>
+		</profile> -->
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>hokhub-repository</activeProfile>
+		<!--<activeProfile>local-snapshot-profile</activeProfile>-->
+	</activeProfiles>
+	
+	<mirrors>
+	</mirrors>
+</settings>

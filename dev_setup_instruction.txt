@@ -1,36 +1,53 @@
 Setup JAVA 8 Open JDK
 http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/#
 
+MacOS: 
+if homebrew installed already:
+   sudo brew up
+else:
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Setup wildfly 9 server for hh project
-1 http://developer-should-know.tumblr.com/post/134394533957/how-to-install-wildfly-on-ubuntu
+I. Setup wildfly 9 server for hh project
+1 Ubuntu: http://developer-should-know.tumblr.com/post/134394533957/how-to-install-wildfly-on-ubuntu
+  MacOS:  sudo brew install wildfly-as
 after this the wildfly user is "wildfly"
 after this the wildfly service name is "wildfly"
 after this the console log name is "console.log"
 
-Setup maven
-1 http://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/
+II. Setup maven
+1  Ubuntu: http://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/
+   MacOS:  sudo brew install maven
+           need set path for envirnoment variable JAVA_HOME, add following to .bash_profile
+           export JAVA_HOME=/Library/Java/JavaVirtualMachines/<replace with jdk file name>/Contents/Home
 2 download setting.xml from github and copy it to maven home conf folder and replace the existing setting.xml folder
-3 your local maven repository will be auto created once you finish above things
+3 open the new setting.xml change the url for you local maven repository.(you can create one, and indicate the url)
+4 if you use eclipse, then eclipse will create the repository for you at "/home/xiaopeiyi/.m2/repository"
 
-Setup mySql
-1 download and install mySql 5.6
+III. Setup mySql
+/*1 download and install mySql 5.6
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04
+MacOS: sudo brew install mysql56
 2 set username:root, pwd:root
 3 Create a Schema, called iwt
-
+4 if you do not want to use cmd line, download mySql client tool e.g. DBeaver/mySql workbench*/
+1 As a developer of hokhub, you should contact hokhub admin to add your ip to hokhub DB for accessing DB
+2 Once you add your ip for accessing DB, when you have update to date standalone.xml in the server and update
+to date applicationContext-hibernate.xml in your project, then you do NOT need to do anything else.
 
 
 Setup hh project
+
+
+IV. Setup hh project
 1 download standalone.xml from github.
 2 replace standalone.xml file with the existing one in wildfly home standalone/configuration/ 
 3 open the new standalone.xml and check the paths. If the paths(deploy folder/log folder/lib folder...) are not existing in your PC, create it.
 4 download modules folder from github.
 5 replace the existing modules folder with the new downloaded modules folder in wildfly home 
 6 download project from github https://github.com/hokhub/HokHub.git
+7 give write permission to the deployed folder and log folder
 
-
-Build and deploy hh project
+V. Build and deploy hh project
 1 cd to your project folder
 2 cmd: mvn -Pjar clean install
 3 cmd: mvn clean install
@@ -39,7 +56,7 @@ Build and deploy hh project
 6 start wildfly server
 
 
-Setup up another wildfly server for message queue
+VI. Setup up another wildfly server for message queue
 1 copy and paste wildfly-9.0.2.Final folder to the same place and rename wildfly-9.0.2.Final
 2 Copy and edit init.d script configuration file:
 sudo cp /opt/wildfly-full/bin/init.d/wildfly.conf /etc/default/wildfly-full
