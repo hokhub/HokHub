@@ -168,8 +168,8 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:/jdbc/iwt" pool-name="/jdbc/iwt" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:mysql://localhost:3306/iwt</connection-url>
+                <datasource jndi-name="java:/jdbc/hh" pool-name="/jdbc/hh" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:mysql://50.116.69.222:3306/hokhubco_dev</connection-url>
                     <driver-class>com.mysql.jdbc.Driver</driver-class>
                     <driver>mysql</driver>
                     <pool>
@@ -177,8 +177,8 @@
                         <max-pool-size>30</max-pool-size>
                     </pool>
                     <security>
-                        <user-name>root</user-name>
-                        <password>root</password>
+                        <user-name>hokhubco_devuser</user-name>
+                        <password>+pgT6^!3L@{L</password>
                     </security>
                 </datasource>
                 <drivers>
